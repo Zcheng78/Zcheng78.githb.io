@@ -3,9 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Zian (Zion) Cheng</title>
+    <title>About - Zian (Zion) Cheng</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: auto;
+            position: relative;
+        }
+        
+        .nav-links li {
+            margin: 0 1rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        
+        .about-section {
+            padding-top: 80px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        .contact-info i {
+            width: 25px;
+            color: #2b6cb0;
+        }
+
+        .section-subtitle {
+            text-align: left;
+            color: #4a5568;
+            margin: 2rem auto;
+            max-width: 900px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .highlight {
+            color: #2b6cb0;
+            font-weight: 500;
+        }
+
+        .skills-list {
+            color: #4299e1;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,6 +114,7 @@
             <div class="logo">ZC</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="education.html">Education</a></li>
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="research.html">Research</a></li>
@@ -25,15 +127,19 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="profile-info">
+            <div class="profile-header">
                 <img src="Profile/profile.jpg" alt="Zian Cheng" class="profile-photo">
-                <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> 249-870-2580</p>
-                    <p><i class="fas fa-envelope"></i> chengzianthony@outlook.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 352 Front St West, Toronto</p>
+                <div class="profile-info">
+                    <div class="contact-info">
+                        <p><i class="fas fa-user"></i> Zian (Zion) Cheng, MASc</p>
+                        <p><i class="fas fa-phone"></i> 249-870-2580</p>
+                        <p><i class="fas fa-envelope"></i> chengzianthony@outlook.com</p>
+                    </div>
                 </div>
             </div>
-            <p>MASc Civil Engineering Professional experienced in contract administration, numerical modeling, and data analysis.</p>
+            <p class="section-subtitle">
+                <span class="highlight">Civil Engineering Professional</span> with expertise in contract administration and advanced numerical modeling using <span class="skills-list">HEC-RAS, OpenFOAM, and ANSYS Fluent</span>. Specialized in watermain and sewer design, complemented by strong data analysis skills using <span class="skills-list">Python, MATLAB, and MS Office Suite</span>. Proven track record working with the <span class="highlight">City of Toronto, Vaughan, and Hamilton</span>, demonstrating comprehensive knowledge of Ontario Provincial Standard Specifications (OPSD). Known for building and maintaining positive relationships with municipalities, developers, and contractors across Ontario.
+            </p>
         </div>
     </section>
 

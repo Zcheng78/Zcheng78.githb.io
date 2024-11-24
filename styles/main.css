@@ -653,3 +653,10 @@ html {
         margin-bottom: 1rem; /* Space below photo */
     }
 }
+
+/* Active link styles */
+.nav-links a.active {
+    color: var(--accent-color);
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-color); /* Underline effect */
+}
