@@ -1,0 +1,246 @@
+/* Add these base rules at the beginning of your CSS file */
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Make tables responsive */
+table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+/* Make forms responsive */
+form {
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+/* Add these media queries at the end of your CSS file */
+
+/* For tablets and smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .profile-content {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+
+    .profile-text {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        margin: 10px 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Add these styles for the mobile menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Replace fixed pixel values with relative units */
+.section {
+    padding: 2rem 1rem;
+}
+
+.text-content {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Add these media queries for responsive design */
+@media screen and (max-width: 768px) {
+  /* Navigation adjustments */
+  .navbar {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* Hidden by default on mobile */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Add hamburger menu button */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
+
+  /* Content adjustments */
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  /* Grid adjustments */
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Image adjustments */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Text adjustments */
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 5px;
+  }
+}
+
+/* Add these styles for the hamburger menu */
+.menu-toggle {
+    display: none; /* Hidden by default, shown in mobile */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger menu animation */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+} 
