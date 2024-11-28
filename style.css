@@ -1,0 +1,506 @@
+/* Add these base rules at the beginning of your CSS file */
+
+* {
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Make tables responsive */
+table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+/* Make forms responsive */
+form {
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+/* Add these media queries at the end of your CSS file */
+
+/* For tablets and smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .profile-content {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+
+    .profile-text {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        margin: 10px 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Add these styles for the mobile menu */
+.menu-toggle {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Replace fixed pixel values with relative units */
+.section {
+    padding: 2rem 1rem;
+}
+
+.text-content {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Add these media queries for responsive design */
+@media screen and (max-width: 768px) {
+  /* Navigation adjustments */
+  .navbar {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* Hidden by default on mobile */
+  }
+
+  .nav-links.active,
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Add hamburger menu button */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
+
+  /* Content adjustments */
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  /* Grid adjustments */
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Image adjustments */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Text adjustments */
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 5px;
+  }
+}
+
+/* Add these styles for the hamburger menu */
+.menu-toggle {
+    display: none; /* Hidden by default, shown in mobile */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger menu animation */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Project Portfolio Styles */
+.projects-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    color: #2b6cb0;
+    margin-bottom: 1rem;
+}
+
+.project-details {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.project-details li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-details li::before {
+    content: "•";
+    color: #2b6cb0;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive adjustments for projects */
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-image {
+        height: 150px;
+    }
+
+    .project-content {
+        padding: 1rem;
+    }
+}
+
+/* Projects Page Specific Styles */
+.projects-page {
+    padding-top: 80px; /* Account for fixed navbar */
+}
+
+.project-item {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.project-description h3 {
+    color: #2b6cb0;
+    margin: 1.5rem 0 1rem;
+}
+
+.project-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.project-description ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-description ul li::before {
+    content: "•";
+    color: #2b6cb0;
+    position: absolute;
+    left: 0;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tech-stack li {
+    background: #e9ecef;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.project-media img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments for projects page */
+@media screen and (max-width: 768px) {
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+
+    .project-item {
+        padding: 1rem;
+    }
+
+    .project-media {
+        order: -1; /* Show image first on mobile */
+    }
+}
+
+/* Add or update these font styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.section-title {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.nav-links a {
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Remove any remaining Arial or other font references */
+.timeline-content,
+.project-content,
+.experience-details,
+p,
+li,
+a {
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Update the navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 0.5rem;  /* Reduced padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-start;  /* Changed from center */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: auto;  /* Allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+    white-space: nowrap;  /* Prevent wrapping */
+}
+
+.nav-links li {
+    margin: 0 0.5rem;  /* Reduced margin */
+    flex-shrink: 0;  /* Prevent shrinking */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;  /* Reduced padding */
+    font-size: 0.9rem;  /* Slightly smaller font */
+}
+
+/* Hide scrollbar but keep functionality */
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0.25rem;  /* Even smaller padding on mobile */
+    }
+
+    .nav-links li {
+        margin: 0 0.25rem;  /* Smaller margins on mobile */
+    }
+
+    .nav-links a {
+        padding: 0.4rem 0.6rem;  /* Smaller padding on mobile */
+        font-size: 0.85rem;  /* Smaller font on mobile */
+    }
+} 
