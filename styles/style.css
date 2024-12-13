@@ -1,8 +1,191 @@
-/* Add these base rules at the beginning of your CSS file */
+/* Black and White color scheme */
+:root {
+    --primary-color: #000000;      /* Pure black */
+    --secondary-color: #1a1a1a;    /* Very dark gray */
+    --accent-color: #ffffff;       /* Pure white */
+    --text-primary: #ffffff;       /* White text */
+    --text-secondary: #cccccc;     /* Light gray text */
+    --background-dark: #000000;    /* Black background */
+    --background-light: #1a1a1a;   /* Dark gray background */
+    --card-background: #262626;    /* Slightly lighter gray */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --hover-shadow: 0 6px 24px rgba(0, 0, 0, 0.7);
+}
 
+/* Base styles */
 * {
     box-sizing: border-box;
     font-family: "Times New Roman", Times, serif;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--background-dark);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.nav-links a {
+    color: var(--text-primary);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-secondary);
+}
+
+/* Section styling */
+.section-title {
+    color: var(--text-primary);
+}
+
+/* Timeline items */
+.timeline-item {
+    background: var(--card-background);
+    border-left: 2px solid var(--text-primary);
+}
+
+.timeline-content h3 {
+    color: var(--text-primary);
+}
+
+.timeline-period {
+    color: var(--text-secondary);
+}
+
+/* Project cards */
+.project-card {
+    background: var(--card-background);
+    border-left: 2px solid var(--text-primary);
+}
+
+/* Buttons */
+.cta-button {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+}
+
+/* Links */
+a {
+    color: var(--text-primary);
+}
+
+a:hover {
+    color: var(--text-secondary);
+}
+
+/* Text colors */
+p, li {
+    color: var(--text-secondary);
+}
+
+h3, h4 {
+    color: var(--text-primary);
+}
+
+/* Images */
+.image-grid img {
+    border: 1px solid var(--secondary-color);
+    background-color: var(--card-background);
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-dark);
+    border-top: 1px solid var(--secondary-color);
+}
+
+/* Hover effects */
+.nav-links a::after {
+    background: var(--text-primary);
+}
+
+/* Contact info */
+.contact-info p {
+    color: var(--text-secondary);
+}
+
+.contact-info i {
+    color: var(--text-primary);
+}
+
+/* Highlight text */
+.highlight {
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+.skills-list {
+    color: var(--text-secondary);
+}
+
+/* About section specific */
+.introduction {
+    background: var(--card-background);
+    color: var(--text-secondary);
+}
+
+/* Education section specific */
+.school-info {
+    background: var(--card-background);
+}
+
+/* Keep existing responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Professional hover effects */
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Enhanced readability */
+p, li {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+h3, h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* Professional spacing */
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 4rem 0;
 }
 
 img {
@@ -439,4 +622,129 @@ p,
 li,
 a {
     font-family: "Times New Roman", Times, serif;
+}
+
+/* Update the navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 0.5rem;  /* Reduced padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-start;  /* Changed from center */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: auto;  /* Allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+    white-space: nowrap;  /* Prevent wrapping */
+}
+
+.nav-links li {
+    margin: 0 0.5rem;  /* Reduced margin */
+    flex-shrink: 0;  /* Prevent shrinking */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;  /* Reduced padding */
+    font-size: 0.9rem;  /* Slightly smaller font */
+}
+
+/* Hide scrollbar but keep functionality */
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0.25rem;  /* Even smaller padding on mobile */
+    }
+
+    .nav-links li {
+        margin: 0 0.25rem;  /* Smaller margins on mobile */
+    }
+
+    .nav-links a {
+        padding: 0.4rem 0.6rem;  /* Smaller padding on mobile */
+        font-size: 0.85rem;  /* Smaller font on mobile */
+    }
 } 
+
+/* Add these section-specific colors */
+/* Home section */
+.hero {
+    background-color: #000000;
+}
+
+/* About section */
+.about-section {
+    background-color: #1a1a1a;
+}
+
+.about-container {
+    background-color: #262626;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+/* Education section */
+.education-section {
+    background-color: #000000;
+}
+
+/* Experience section */
+.experience-section {
+    background-color: #1a1a1a;
+}
+
+/* Projects section */
+.projects-section {
+    background-color: #000000;
+}
+
+/* Research section */
+.research-section {
+    background-color: #1a1a1a;
+}
+
+/* More section */
+.more-section {
+    background-color: #000000;
+}
+
+/* Add padding between sections */
+section {
+    padding: 4rem 0;
+}
+
+/* Smooth transition between sections */
+section {
+    transition: background-color 0.3s ease;
+}
+
+/* Keep existing styles and add these transitions */
+.timeline-item,
+.project-card,
+.about-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Keep the rest of your existing styles */ 

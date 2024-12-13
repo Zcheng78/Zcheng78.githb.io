@@ -49,28 +49,29 @@
             max-width: 1200px;
         }
 
-        .profile-header {
+        .about-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
+            gap: 2rem;
+            padding: 2rem;
+            align-items: flex-start;
+        }
+
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        .profile-info {
-            text-align: left;
-        }
-
         .contact-info {
-            margin-top: 1rem;
+            padding: 1rem 0;
         }
 
         .contact-info p {
@@ -84,11 +85,12 @@
             color: #2b6cb0;
         }
 
-        .section-subtitle {
-            text-align: left;
+        .right-column {
+            flex: 2;
+        }
+
+        .introduction {
             color: #4a5568;
-            margin: 2rem auto;
-            max-width: 900px;
             line-height: 1.8;
             font-size: 1.1rem;
             padding: 1.5rem;
@@ -105,6 +107,22 @@
         .skills-list {
             color: #4299e1;
             font-weight: 500;
+        }
+
+        @media screen and (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+            }
+
+            .profile-photo {
+                max-width: 200px;
+                margin: 0 auto;
+            }
+
+            .left-column {
+                align-items: center;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -127,19 +145,32 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="profile-header">
-                <img src="Profile/profile.jpg" alt="Zian Cheng" class="profile-photo">
-                <div class="profile-info">
+            <div class="about-container">
+                <div class="left-column">
+                    <img src="Profile/profile.jpg" alt="Zian Cheng" class="profile-photo">
                     <div class="contact-info">
                         <p><i class="fas fa-user"></i> Zian (Zion) Cheng, MASc</p>
                         <p><i class="fas fa-phone"></i> 249-870-2580</p>
                         <p><i class="fas fa-envelope"></i> chengzianthony@outlook.com</p>
                     </div>
                 </div>
+                <div class="right-column">
+                    <div class="introduction">
+                        <p>
+                            <span class="highlight">Civil Engineering Professional</span> with expertise in contract administration and advanced numerical modeling using <span class="skills-list">HEC-RAS, OpenFOAM, and ANSYS Fluent</span>. 
+                        </p>
+                        <p>
+                            Specialized in watermain and sewer design, complemented by strong data analysis skills using <span class="skills-list">Python, MATLAB, and MS Office Suite</span>. 
+                        </p>
+                        <p>
+                            Proven track record working with the <span class="highlight">City of Toronto, Vaughan, and Hamilton</span>, demonstrating comprehensive knowledge of Ontario Provincial Standard Specifications (OPSD). 
+                        </p>
+                        <p>
+                            Known for building and maintaining positive relationships with municipalities, developers, and contractors across Ontario.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <p class="section-subtitle">
-                <span class="highlight">Civil Engineering Professional</span> with expertise in contract administration and advanced numerical modeling using <span class="skills-list">HEC-RAS, OpenFOAM, and ANSYS Fluent</span>. Specialized in watermain and sewer design, complemented by strong data analysis skills using <span class="skills-list">Python, MATLAB, and MS Office Suite</span>. Proven track record working with the <span class="highlight">City of Toronto, Vaughan, and Hamilton</span>, demonstrating comprehensive knowledge of Ontario Provincial Standard Specifications (OPSD). Known for building and maintaining positive relationships with municipalities, developers, and contractors across Ontario.
-            </p>
         </div>
     </section>
 
